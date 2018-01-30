@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="same-origin">
+<title>Git 安装和使用教程 - 懵懂的菜鸟 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/bundle-marvin3-brown.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/bundle-marvin3-brown-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/smuxiaolei/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/smuxiaolei/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/smuxiaolei/wlwmanifest.xml">
+<script src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/hm.js"></script><script async="" src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/analytics.js"></script><script src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/jquery-2.js"></script>
+<script type="text/javascript">var currentBlogApp = 'smuxiaolei', cb_enable_mathjax=true;var isLogined=false;</script>
+<script type="text/x-mathjax-config;executed=true">
+    MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'blogpost-body', processEscapes: true },
+        TeX: { 
+            equationNumbers: { autoNumber: ['AMS'], useLabelIds: true }, extensions: ['extpfeil.js'] },
+            'HTML-CSS': { linebreaks: { automatic: true } },
+            SVG: { linebreaks: { automatic: true } }
+        });
+    </script><script src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/MathJax.js"></script>
+<script src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.js" type="text/javascript"></script>
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body rlt="1"><div id="MathJax_Message" style="display: none;"></div><svg aria-hidden="true" style="position: absolute; width: 0px; height: 0px; overflow: hidden;"><symbol id="icon-redo" viewBox="0 0 1024 1024"><path d="M0 576c0 152.928 67.04 290.176 173.344 384l84.672-96c-79.712-70.368-130.016-173.312-130.016-288 0-212.064 171.936-384 384-384 106.048 0 202.048 42.976 271.52 112.48l-143.52 143.52 384 0 0-384-149.984 149.984c-92.64-92.672-220.64-149.984-362.016-149.984-282.784 0-512 229.216-512 512z"></path></symbol><symbol id="icon-wxbsousuotuiguang" viewBox="0 0 1024 1024"><path d="M937.798221 769.855766 714.895525 546.869159c23.821545-45.681412 37.589107-97.495498 37.589107-152.564721 0-182.559872-148.560524-331.078441-331.079464-331.078441-182.623317 0-331.098907 148.517545-331.098907 331.078441 0 182.559872 148.47559 331.078441 331.098907 331.078441 60.575634 0 117.27089-16.647145 166.206416-45.221948L807.552831 900.100132c17.938558 17.939581 41.551348 26.867928 65.12423 26.867928s47.182602-8.928347 65.123206-26.867928c17.396205-17.396205 27.033703-40.550555 27.033703-65.164139C964.831924 810.321386 955.194426 787.16806 937.798221 769.855766M133.027248 394.304438c0-158.989037 129.34795-288.358477 288.378943-288.358477 158.948105 0 288.3595 129.36944 288.3595 288.358477 0 99.206466-50.437739 186.899714-126.950344 238.795665-1.044796 0.416486-1.876744 1.252527-2.877537 1.835811-45.515636 30.03813-99.999528 47.727001-158.530596 47.727001C262.375198 682.662915 133.027248 553.336454 133.027248 394.304438M907.594315 869.896226c-19.273972 19.191084-50.562583 19.191084-69.836555 0L623.6995 655.797034c26.157753-20.274766 49.186236-44.305065 68.292386-71.421656l215.601406 215.683271c9.344832 9.262968 14.518668 21.694091 14.518668 34.877345S916.939147 860.551394 907.594315 869.896226"></path><path d="M215.169059 387.79007c0 0 42.156122-211.011878 234.186693-224.946238C449.355753 162.843832 185.944458 131.555222 215.169059 387.79007"></path></symbol><symbol id="icon-xiangshangjiantou" viewBox="0 0 1024 1024"><path d="M966.4 668.8l-435.2-432c-9.6-9.6-25.6-9.6-35.2 0l-441.6 432c-9.6 9.6-9.6 25.6 0 35.2 9.6 9.6 25.6 9.6 35.2 0l425.6-416 416 416c9.6 9.6 25.6 9.6 35.2 0S976 678.4 966.4 668.8z"></path></symbol><symbol id="icon-xiangxiajiantou" viewBox="0 0 1024 1024"><path d="M966.4 323.2c-9.6-9.6-25.6-9.6-35.2 0l-416 416-425.6-416c-9.6-9.6-25.6-9.6-35.2 0-9.6 9.6-9.6 25.6 0 35.2l441.6 432c9.6 9.6 25.6 9.6 35.2 0l435.2-432C976 345.6 976 332.8 966.4 323.2z"></path></symbol><symbol id="icon-change" viewBox="0 0 1024 1024"><path d="M892.419 339.964c4.16-10.040 1.86-21.595-5.824-29.281l-126.469-126.469-37.997 37.997 80.603 80.603h-606.828v53.735h671.691c10.867 0 20.665-6.545 24.822-16.586z"></path><path d="M894.464 625.229h-671.691c-10.867 0-20.664 6.546-24.822 16.586-4.16 10.040-1.86 21.595 5.824 29.281l126.469 126.469 37.997-37.996-80.603-80.603h606.828v-53.735z"></path></symbol><symbol id="icon-close" viewBox="0 0 1024 1024"><path d="M546.942134 511.818772l327.456957-326.128977c9.617355-9.577423 9.648071-25.135361 0.070648-34.751692-9.577423-9.617355-25.137409-9.647048-34.750668-0.070648L512.119795 477.137729 184.520518 150.868479c-9.616331-9.577423-25.176316-9.545683-34.751692 0.070648-9.577423 9.616331-9.545683 25.174268 0.070648 34.751692l327.457981 326.127953-327.457981 326.128978c-9.616331 9.577423-9.647048 25.135361-0.070648 34.751692a24.496456 24.496456 0 0 0 17.41117 7.231702 24.500552 24.500552 0 0 0 17.340522-7.162078L512.119795 546.499816l327.599276 326.26925a24.492361 24.492361 0 0 0 17.340522 7.162078 24.5026 24.5026 0 0 0 17.41117-7.231702c9.577423-9.617355 9.545683-25.175292-0.070648-34.751692L546.942134 511.818772z" fill="#353535"></path></symbol><symbol id="icon-refresh" viewBox="0 0 1025 1024"><path d="M1000.803878 388.49588c-10.161038-8.99688-25.690307-8.051834-34.688211 2.109204l-61.519126 69.484954c-4.493833-44.37519-15.419713-87.479738-32.656822-128.641976-22.511143-53.755003-54.789128-101.965668-95.933959-143.294799C691.231126 103.00184 577.673029 56.107892 456.249444 56.107892c-60.834147 0-119.860112 11.920073-175.440703 35.42848-53.672069 22.700562-101.869423 55.194586-143.25282 96.579007-41.383397 41.383397-73.877422 89.580751-96.579007 143.25282-23.508407 55.580591-35.42848 114.60758-35.42848 175.440703 0 60.834147 11.920073 119.860112 35.42848 175.440703 22.700562 53.672069 55.194586 101.869423 96.579007 143.25282s89.580751 73.877422 143.25282 96.579007c55.580591 23.508407 114.60758 35.42848 175.440703 35.42848 54.671381 0 108.114099-9.688003 158.841474-28.794727 49.002128-18.457581 94.109396-45.155391 134.065497-79.351113 10.310525-8.824868 11.515638-24.337754 2.691795-34.648279-8.824868-10.310525-24.337754-11.515638-34.648279-2.691795-35.605612 30.473899-75.789016 54.259779-119.433151 70.699282-45.169725 17.012879-92.78244 25.640136-141.517334 25.640136-54.220871 0-106.805574-10.613595-156.296095-31.546931-47.813397-20.222759-90.760267-49.180284-127.645736-86.066777-36.885469-36.885469-65.842994-79.832339-86.066777-127.645736-20.932312-49.490521-31.545907-102.075224-31.545907-156.296095s10.613595-106.805574 31.545907-156.295071c20.223783-47.813397 49.180284-90.760267 86.066777-127.645736 36.886493-36.885469 79.832339-65.842994 127.645736-86.066777 49.489497-20.932312 102.075224-31.545907 156.296095-31.545907 108.254372 0 209.444958 41.755067 284.926808 117.573776 67.949126 68.251172 108.312733 157.16435 115.471739 253.034828l-101.959525-72.125554c-11.078439-7.836818-26.414194-5.209529-34.252036 5.869935-7.837842 11.079463-5.210552 26.415217 5.868911 34.25306l140.842594 99.631209c4.291103 3.03582 9.251828 4.512263 14.179788 4.512263 6.824196 0 13.58491-2.834115 18.410482-8.284256l103.1759-116.535556C1011.909962 413.02203 1010.964916 397.491737 1000.803878 388.49588z"></path></symbol><symbol id="icon-error" viewBox="0 0 1025 1024"><path d="M982.668821 313.74918c-25.810101-60.752236-62.714-115.373446-109.685763-162.346233-46.972787-46.971763-101.593997-83.875662-162.346233-109.685763C647.666853 14.966132 580.925912 1.401699 512.268258 1.401699S376.868639 14.966132 313.898667 41.717184c-60.752236 25.810101-115.373446 62.714-162.346233 109.685763-46.971763 46.972787-83.875662 101.593997-109.685763 162.346233C15.115619 376.719151 1.551186 443.460092 1.551186 512.118771S15.115619 647.517366 41.866671 710.487337c25.810101 60.75326 62.714 115.37447 109.685763 162.346233 46.971763 46.972787 101.592974 83.876686 162.346233 109.685763 62.969971 26.752076 129.710912 40.316509 198.369591 40.316509s135.398595-13.564433 198.368567-40.316509c60.75326-25.809077 115.37447-62.712976 162.346233-109.685763 46.972787-46.971763 83.876686-101.592974 109.685763-162.346233 26.752076-62.969971 40.316509-129.710912 40.316509-198.368567S1009.419873 376.719151 982.668821 313.74918zM937.435615 691.271058c-23.333323 54.923257-56.71096 104.317532-99.204249 146.811845-42.494313 42.493289-91.888588 75.870926-146.811845 99.204249-56.8584 24.155503-117.133505 36.403219-179.152287 36.403219-62.018782 0-122.293887-12.247716-179.152287-36.403219-54.923257-23.333323-104.317532-56.71096-146.810821-99.204249-42.493289-42.494313-75.870926-91.888588-99.204249-146.811845C62.944374 634.412658 50.697682 574.136529 50.697682 512.118771c0-62.018782 12.247716-122.293887 36.403219-179.152287 23.333323-54.923257 56.709936-104.317532 99.204249-146.810821s91.888588-75.870926 146.810821-99.204249c56.8584-24.155503 117.133505-36.403219 179.152287-36.403219 62.017758 0 122.292863 12.247716 179.152287 36.403219 54.923257 23.333323 104.317532 56.709936 146.810821 99.204249 42.494313 42.493289 75.870926 91.888588 99.205273 146.810821 24.155503 56.8584 36.403219 117.134529 36.403219 179.152287S961.591118 634.412658 937.435615 691.271058z"></path><path d="M704.62457 319.769626c-9.997216-9.996192-26.203273-9.996192-36.199466 0L512.382933 475.810773 356.341786 319.769626c-9.996192-9.996192-26.204297-9.996192-36.199466 0-9.996192 9.996192-9.996192 26.203273 0 36.199466l156.041147 156.041147L320.14232 668.05241c-9.996192 9.997216-9.996192 26.204297 0 36.199466 4.997584 4.998608 11.549426 7.496888 18.100245 7.496888s13.101637-2.49828 18.100245-7.496888l156.041147-156.041147L668.424081 704.251876c4.998608 4.998608 11.548403 7.496888 18.100245 7.496888s13.101637-2.49828 18.100245-7.496888c9.996192-9.996192 9.996192-26.203273 0-36.199466L548.583423 512.011263l156.041147-156.041147C714.620762 345.973923 714.620762 329.765818 704.62457 319.769626z"></path></symbol><symbol id="icon-prompt" viewBox="0 0 1025 1024"><path d="M637.349161 308.770026"></path><path d="M512.53242 1022.476459c-68.658678 0-135.399619-13.564433-198.369591-40.316509-60.752236-25.809077-115.373446-62.712976-162.346233-109.685763-46.971763-46.971763-83.875662-101.592974-109.685763-162.346233-26.751052-62.969971-40.315485-129.710912-40.315485-198.368567s13.564433-135.399619 40.315485-198.369591c25.810101-60.752236 62.714-115.373446 109.685763-162.346233 46.972787-46.971763 101.593997-83.875662 162.346233-109.685763 62.969971-26.751052 129.710912-40.315485 198.369591-40.315485s135.398595 13.564433 198.368567 40.315485c60.752236 25.810101 115.37447 62.714 162.346233 109.685763 46.972787 46.972787 83.876686 101.593997 109.686787 162.346233 26.752076 62.969971 40.316509 129.710912 40.316509 198.369591s-13.564433 135.398595-40.316509 198.368567c-25.810101 60.75326-62.712976 115.37447-109.685763 162.346233-46.971763 46.972787-101.593997 83.876686-162.346233 109.685763C647.93204 1008.912026 581.190075 1022.476459 512.53242 1022.476459zM512.53242 50.188811c-62.018782 0-122.293887 12.247716-179.152287 36.403219-54.923257 23.333323-104.317532 56.709936-146.810821 99.204249s-75.870926 91.888588-99.204249 146.810821c-24.155503 56.8584-36.403219 117.133505-36.403219 179.152287 0 62.017758 12.247716 122.292863 36.403219 179.152287 23.333323 54.923257 56.709936 104.317532 99.204249 146.811845 42.493289 42.493289 91.888588 75.870926 146.810821 99.204249 56.8584 24.155503 117.133505 36.403219 179.152287 36.403219 62.017758 0 122.293887-12.247716 179.153311-36.403219 54.923257-23.333323 104.317532-56.71096 146.810821-99.204249 42.494313-42.494313 75.87195-91.888588 99.205273-146.811845 24.155503-56.8584 36.403219-117.133505 36.403219-179.152287s-12.247716-122.293887-36.404243-179.152287c-23.333323-54.923257-56.71096-104.317532-99.204249-146.810821-42.494313-42.493289-91.888588-75.870926-146.811845-99.204249C634.825284 62.436527 574.550178 50.188811 512.53242 50.188811z"></path><path d="M512.442318 767.198298c-14.136785 0-25.597133-11.460348-25.597133-25.597133l0-332.127922c0-14.136785 11.460348-25.597133 25.597133-25.597133s25.597133 11.460348 25.597133 25.597133l0 332.127922C538.039452 755.737949 526.578079 767.198298 512.442318 767.198298z"></path><path d="M511.381573 319.924232c-17.522773 0-31.778329-14.255555-31.778329-31.778329 0-17.52175 14.255555-31.777305 31.778329-31.777305 17.52175 0 31.777305 14.255555 31.777305 31.777305C543.158878 305.668677 528.903323 319.924232 511.381573 319.924232z"></path></symbol><symbol id="icon-success" viewBox="0 0 1025 1024"><path d="M511.679524 1023.15939c-68.658678 0-135.399619-13.564433-198.369591-40.316509-60.752236-25.809077-115.373446-62.712976-162.346233-109.685763-46.971763-46.971763-83.875662-101.592974-109.685763-162.346233-26.751052-62.969971-40.315485-129.710912-40.315485-198.368567s13.564433-135.399619 40.315485-198.369591c25.810101-60.752236 62.714-115.373446 109.685763-162.346233 46.972787-46.971763 101.593997-83.875662 162.346233-109.685763C376.279905 15.28968 443.020846 1.725247 511.679524 1.725247S647.078119 15.28968 710.048091 42.040731c60.752236 25.810101 115.37447 62.714 162.346233 109.685763 46.972787 46.972787 83.876686 101.593997 109.686787 162.346233 26.752076 62.969971 40.316509 129.710912 40.316509 198.369591s-13.564433 135.398595-40.316509 198.368567c-25.810101 60.75326-62.712976 115.37447-109.685763 162.346233-46.971763 46.972787-101.593997 83.876686-162.346233 109.685763C647.079143 1009.594957 580.337178 1023.15939 511.679524 1023.15939zM511.679524 50.871742c-62.018782 0-122.293887 12.247716-179.152287 36.403219-54.923257 23.333323-104.317532 56.709936-146.810821 99.204249s-75.870926 91.888588-99.204249 146.810821c-24.155503 56.8584-36.403219 117.133505-36.403219 179.152287 0 62.017758 12.247716 122.292863 36.403219 179.152287 23.333323 54.923257 56.709936 104.317532 99.204249 146.811845 42.493289 42.493289 91.888588 75.870926 146.810821 99.204249 56.8584 24.155503 117.133505 36.403219 179.152287 36.403219 62.017758 0 122.293887-12.247716 179.153311-36.403219 54.923257-23.333323 104.317532-56.71096 146.810821-99.204249 42.494313-42.494313 75.87195-91.888588 99.205273-146.811845 24.155503-56.8584 36.403219-117.133505 36.403219-179.152287s-12.247716-122.293887-36.404243-179.152287c-23.333323-54.923257-56.71096-104.317532-99.204249-146.810821-42.494313-42.493289-91.888588-75.870926-146.811845-99.204249C633.972387 63.119459 573.697282 50.871742 511.679524 50.871742z"></path><path d="M451.780185 689.848881c-6.223175 0-12.452493-2.255619-17.365095-6.794503L253.195578 515.658342c-10.384245-9.592782-11.027245-25.787576-1.434463-36.171821 9.592782-10.386293 25.786552-11.026221 36.171821-1.434463l163.146912 150.703633 289.753404-289.754428c9.997216-9.996192 26.203273-9.996192 36.199466 0 9.996192 9.996192 9.996192 26.203273 0 36.199466L469.883501 682.351993C464.896156 687.339338 458.342266 689.848881 451.780185 689.848881z"></path></symbol></svg>
+<a name="top"></a>
+
+<div id="top">
+	
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/smuxiaolei/">懵懂的菜鸟</a></h1>
+<p id="tagline">Stay hungry,Stay foolish.</p>
+</div>
+<div id="leftmenu">
+	
+		
+<h3>导航</h3>
+<ul>
+			<li><a id="blog_nav_sitehome" href="http://www.cnblogs.com/">博客园</a></li>
+			<li><a id="blog_nav_myhome" href="http://www.cnblogs.com/smuxiaolei/">首页</a></li>
+			<li><a id="blog_nav_newpost" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+			<li><a id="blog_nav_contact" accesskey="9" rel="nofollow" href="https://msg.cnblogs.com/send/%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F">联系</a></li>
+			<li>
+			</li><li><a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" title="Calendar" cellspacing="0" cellpadding="0">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar('2017/12/01');return false;">&lt;</a></td><td align="center">2018年1月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar('2018/02/01');return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" abbr="日" scope="col" align="center">日</th><th class="CalDayHeader" abbr="一" scope="col" align="center">一</th><th class="CalDayHeader" abbr="二" scope="col" align="center">二</th><th class="CalDayHeader" abbr="三" scope="col" align="center">三</th><th class="CalDayHeader" abbr="四" scope="col" align="center">四</th><th class="CalDayHeader" abbr="五" scope="col" align="center">五</th><th class="CalDayHeader" abbr="六" scope="col" align="center">六</th></tr><tr><td class="CalOtherMonthDay" align="center">31</td><td align="center">1</td><td align="center">2</td><td align="center">3</td><td align="center">4</td><td align="center">5</td><td class="CalWeekendDay" align="center">6</td></tr><tr><td class="CalWeekendDay" align="center">7</td><td align="center">8</td><td align="center">9</td><td align="center">10</td><td align="center">11</td><td align="center">12</td><td class="CalWeekendDay" align="center">13</td></tr><tr><td class="CalWeekendDay" align="center">14</td><td align="center">15</td><td align="center">16</td><td align="center">17</td><td align="center">18</td><td align="center">19</td><td class="CalWeekendDay" align="center">20</td></tr><tr><td class="CalWeekendDay" align="center">21</td><td align="center">22</td><td align="center">23</td><td align="center"><a href="http://www.cnblogs.com/smuxiaolei/archive/2018/01/24.html"><u>24</u></a></td><td align="center"><a href="http://www.cnblogs.com/smuxiaolei/archive/2018/01/25.html"><u>25</u></a></td><td align="center">26</td><td class="CalWeekendDay" align="center">27</td></tr><tr><td class="CalWeekendDay" align="center">28</td><td align="center">29</td><td class="CalTodayDay" align="center">30</td><td align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td></tr><tr><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td><td class="CalOtherMonthDay" align="center">8</td><td class="CalOtherMonthDay" align="center">9</td><td class="CalOtherMonthDay" align="center">10</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+		
+<h3>公告</h3>
+	<div id="blog-news"><a href="https://github.com/cl244849315" target="_blank">
+　　<img style="position: fixed; top: 0; right: 0; border: 0; z-index: 1;" src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/o_github.png" data-bd-imgshare-binded="1">
+</a>
+
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" id="honehoneclock" width="160" height="70" align="middle"><param name="allowScriptAccess" value="always"><param name="movie" value="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff"><param name="wmode" value="transparent"><embed wmode="transparent" src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/honehone_clock_tr.swf" quality="high" bgcolor="#ffffff" name="honehoneclock" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" width="160" height="70" align="middle"></object>
+<div align="center"><h3>轻松一刻</h3><h3></h3></div>
+<object type="application/x-shockwave-flash" style="outline:none;" data="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/hamster.swf" width="180" height="225"><param name="movie" value="http://cdn.abowman.com/widgets/hamster/hamster.swf?"><param name="AllowScriptAccess" value="always"><param name="wmode" value="opaque"></object>
+<object type="application/x-shockwave-flash" style="outline:none;" data="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/discDrop.swf" width="180" height="225"><param name="movie" value="http://cdn.abowman.com/widgets/discdrop/discDrop.swf?"><param name="AllowScriptAccess" value="always"><param name="wmode" value="opaque"><param name="bgcolor" value="FFFFFF"></object>
+<div align="center"><h3>页面访客</h3><h3></h3></div>
+<a href="https://info.flagcounter.com/dO9e"><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/a.png" alt="Flag Counter" width="180" border="0"></a><div id="profile_block">昵称：<a href="https://home.cnblogs.com/u/smuxiaolei/">懵懂的菜鸟</a><br>园龄：<a href="https://home.cnblogs.com/u/smuxiaolei/" title="入园时间：2017-08-15">5个月</a><br>粉丝：<a href="https://home.cnblogs.com/u/smuxiaolei/followers/">3</a><br>关注：<a href="https://home.cnblogs.com/u/smuxiaolei/followees/">8</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow('d07370dd-0251-4f47-777c-08d49c352df3')">+加关注</a></div><script>getFollowStatus('d07370dd-0251-4f47-777c-08d49c352df3')</script></div></div><script type="text/javascript">loadBlogNews();</script>
+		
+	
+</div>
+<div id="rightmenu">
+	
+		<div id="blog_stats">
+<h3>统计</h3>
+	<ul>
+		<li>随笔 - 256
+		</li><li>文章 - 0
+		</li><li>评论 - 0
+		</li><li>引用 - 0
+	</li>
+</ul></div>
+		<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk" type="text">&nbsp;<input onclick="zzk_go()" value="找找看" id="btnZzk" class="btn_my_zzk" type="button"></div>
+
+</div>
+</div>
+
+</div><div id="sidebar_recentposts" class="sidebar-block">
+<h3 class="catListTitle">最新随笔</h3>
+<div class="RecentComment" id="RecentPosts">
+<ul style="word-break:break-all">
+<li><a href="http://www.cnblogs.com/smuxiaolei/p/8352941.html">1. 伪代码规范</a></li><li><a href="http://www.cnblogs.com/smuxiaolei/p/8343537.html">2. 重启随机游走算法（RWR：Random Walk with Restart）</a></li><li><a href="http://www.cnblogs.com/smuxiaolei/p/8343472.html">3. 二分图匹配——通俗易懂</a></li><li><a href="http://www.cnblogs.com/smuxiaolei/p/8120194.html">4. 外企面试自我介绍</a></li><li><a href="http://www.cnblogs.com/smuxiaolei/p/8120189.html">5. 五大行自荐信</a></li><li><a href="http://www.cnblogs.com/smuxiaolei/p/8120182.html">6. 研究生复试联系导师的邮件</a></li><li><a href="http://www.cnblogs.com/smuxiaolei/p/8120168.html">7. 研究生面试十大问题</a></li><li><a href="http://www.cnblogs.com/smuxiaolei/p/8120138.html">8. 英文面试自我介绍</a></li><li><a href="http://www.cnblogs.com/smuxiaolei/p/8081359.html">9. 中文核心期刊目录(2014年版)北大核心目录(第七版)</a></li><li><a href="http://www.cnblogs.com/smuxiaolei/p/8081342.html">10. 计算机核心期刊投稿意见</a></li>
+</ul>
+</div>
+</div><div id="sidebar_toptags" class="sidebar-block"></div><div id="sidebar_categories">
+		<h3>随笔分类<span style="font-size:11px;font-weight:normal">(275)</span></h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/smuxiaolei/category/1077236.html">C/C++知识(13)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/smuxiaolei/category/1077248.html">Git(2)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/smuxiaolei/category/1077235.html">Java知识(44)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/smuxiaolei/category/1077243.html">Linux知识(1)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/smuxiaolei/category/1077239.html">NLP 自然语言处理|DL深度学习(17)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/smuxiaolei/category/1077228.html">Python爬虫(12)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/smuxiaolei/category/1077234.html">Python知识(54)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/smuxiaolei/category/1077255.html">TCP/TP与网络(3)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_8" href="http://www.cnblogs.com/smuxiaolei/category/1077250.html">编程题(11)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_9" href="http://www.cnblogs.com/smuxiaolei/category/1077254.html">编译原理与操作系统(1)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_10" href="http://www.cnblogs.com/smuxiaolei/category/1077244.html">大数据|Hadoop知识(7)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_11" href="http://www.cnblogs.com/smuxiaolei/category/1077238.html">机器学习与数据挖掘(26)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_12" href="http://www.cnblogs.com/smuxiaolei/category/1135242.html">论文(2)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_13" href="http://www.cnblogs.com/smuxiaolei/category/1077246.html">前端技术(2)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_14" href="http://www.cnblogs.com/smuxiaolei/category/1077240.html">软件操作与安装(15)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_15" href="http://www.cnblogs.com/smuxiaolei/category/1077279.html">数据处理与数据集(2)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_16" href="http://www.cnblogs.com/smuxiaolei/category/1077241.html">数据结构与高级算法(15)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_17" href="http://www.cnblogs.com/smuxiaolei/category/1077237.html">数据库知识(22)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_18" href="http://www.cnblogs.com/smuxiaolei/category/1077247.html">数理逻辑(8)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_19" href="http://www.cnblogs.com/smuxiaolei/category/1085852.html">英语与面试(14)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_20" href="http://www.cnblogs.com/smuxiaolei/category/1077282.html">正则表达式(4)</a> </li>
+			
+				</ul>
+			
+	
+		<h3>随笔档案<span style="font-size:11px;font-weight:normal">(256)</span></h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/smuxiaolei/archive/2018/01.html">2018年1月 (3)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/smuxiaolei/archive/2017/12.html">2017年12月 (11)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/smuxiaolei/archive/2017/11.html">2017年11月 (2)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_3" href="http://www.cnblogs.com/smuxiaolei/archive/2017/10.html">2017年10月 (59)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_4" href="http://www.cnblogs.com/smuxiaolei/archive/2017/09.html">2017年9月 (109)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_5" href="http://www.cnblogs.com/smuxiaolei/archive/2017/08.html">2017年8月 (72)</a> </li>
+			
+				</ul>
+			
+	
+		<h3>友情链接</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_2_Link_0" href="http://so.csdn.net/so/search/s.do?q=%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98" rel="nofollow">CSDN</a> </li>
+			
+				<li><a id="CatList_LinkList_2_Link_1" href="https://github.com/" rel="nofollow">GitHub</a> </li>
+			
+				</ul>
+			
+	</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap" style="display: none;">
+<h3 class="catListTitle">最新评论</h3>
+<div class="RecentComment" id="RecentComments">
+	<div id="RecentCommentsBlock"></div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<h3>阅读排行榜</h3>
+<div class="RecentComment">
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/smuxiaolei/p/7484678.html">1. Git 安装和使用教程(2422)</a></li><li><a href="http://www.cnblogs.com/smuxiaolei/p/7453169.html">2. python 判断是否是空行或注释行(1661)</a></li><li><a href="http://www.cnblogs.com/smuxiaolei/p/7692392.html">3. java获取变量的类型(1288)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap" style="display: none;">
+<h3>评论排行榜</h3>
+<div class="RecentComment">
+	<div id="TopFeedbackPostsBlock"></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div class="RecentComment">
+	<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/smuxiaolei/p/7484678.html">1. Git 安装和使用教程(1)</a></li><li><a href="http://www.cnblogs.com/smuxiaolei/p/7692392.html">2. java获取变量的类型(1)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>      
+	
+</div>
+<div id="main">
+	
+<div id="post_detail">
+	<div class="post">
+		<h2>
+			<a id="cb_post_title_url" href="http://www.cnblogs.com/smuxiaolei/p/7484678.html">Git 安装和使用教程</a>
+		</h2>
+		<div id="cnblogs_post_body" class="blogpost-body"><h1><span class="ask-title ">git 提交 全部文件</span></h1>
+<ol>
+<li>
+<p><span style="background-color: #ff0000;">git add<strong> .&nbsp;</strong></span></p>
+<p><code>git add xx</code>命令可以将xx文件添加到暂存区，如果有很多改动可以通过&nbsp;<code>git add -A .</code>来一次添加所有改变的文件。注意&nbsp;<code>-A</code>&nbsp;选项后面还有一个句点。&nbsp;<code>git add -A</code>表示添加所有内容，&nbsp;<code>git add .</code>&nbsp;表示添加新文件和编辑过的文件不包括删除的文件;&nbsp;<code>git add -u</code>&nbsp;表示添加编辑或者删除的文件，不包括新添加的文件</p>
+</li>
+<li>
+<p><span style="background-color: #ff0000;">git commit -m "提交注释"</span></p>
+</li>
+<li>
+<p>git push origin &nbsp;分支名称，一般使用：<span style="background-color: #ff0000;">git push origin master</span></p>
+</li>
+<li>
+<p>&nbsp;</p>
+<p>正常来说这三部就够了</p>
+</li>
+</ol>
+<h1>&nbsp;</h1>
+<h1>&nbsp;</h1>
+<h1>&nbsp;</h1>
+<h1 id="git介绍">Git介绍</h1>
+<p>&nbsp;</p>
+<p>分布式：<a class="replace_word" title="Git知识库" href="http://lib.csdn.net/base/git" target="_blank">Git</a><a class="replace_word" title="Git知识库" href="http://lib.csdn.net/base/git" target="_blank">版本控制</a>系统是一个分布式的系统，是用来保存工程源代码历史状态的命令行工具。</p>
+<p>&nbsp;</p>
+<p>保存点：Git的保存点可以追踪源码中的文件, 并能得到某一个时间点上的整个工程项目的状态；可以在该保存点将多人提交的源码合并, 也可以回退到某一个保存点上。</p>
+<p>&nbsp;</p>
+<p>Git离线操作性：Git可以离线进行代码提交，因此它称得上是完全的分布式处理，Git所有的操作不需要在线进行；这意味着Git的速度要比SVN等工具快得多，因为SVN等工具需要在线时才能操作，如果网络环境不好， 提交代码会变得非常缓慢。</p>
+<p>&nbsp;</p>
+<p>Git基于快照：SVN等老式版本控制工具是将提交点保存成补丁文件，Git提交是将提交点指向提交时的项目快照，提交的东西包含一些元数据(作者，日期，GPG等)。</p>
+<p>&nbsp;</p>
+<p>Git的分支和合并：分支模型是Git最显著的特点，因为这改变了开发者的开发模式，SVN等版本控制工具将每个分支都要放在不同的目录中，Git可以在同一个目录中切换不同的分支。</p>
+<p>&nbsp;</p>
+<p>分支即时性：创建和切换分支几乎是同时进行的，用户可以上传一部分分支，另外一部分分支可以隐藏在本地，不必将所有的分支都上传到GitHub中去。</p>
+<p>&nbsp;</p>
+<p>分支灵活性：用户可以随时创建、合并、删除分支，多人实现不同的功能，可以创建多个分支进行开发，之后进行分支合并，这种方式使开发变得快速、简单、安全。</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1 id="git客户端下载"><a name="t1" target="_blank"></a>Git客户端下载</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>截止博客发布的时间，Git最新版本是2.10.2。我们可以从官网下载，官网下载链接如下：</p>
+<p><a href="https://git-scm.com/downloads/" target="_blank">点击打开官网下载链接</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>如果觉得官网下载太慢，也可以从如下CSDN的链接下载：</p>
+<p><a href="http://download.csdn.net/detail/zzfenglin/9681343" target="_blank">点击打开CSDN下载链接</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1 id="git客户端安装过程"><a name="t2" target="_blank"></a>Git客户端安装过程</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>1.双击安装程序“Git-2.10.2-64-bit.exe”，显示截图如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20161113103644709.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>2.点击“Next”，显示截图如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20161113103723460.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>根据自己的情况，选择程序的安装目录。</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>3.继续点击“Next”，显示截图如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20161113103820414.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>说明：</p>
+<p>（1）图标组件(Addition icons) : 选择是否创建桌面快捷方式。</p>
+<p>（2）桌面浏览(Windows Explorer integration) : 浏览源码的方法，使用bash 或者 使用Git GUI工具。</p>
+<p>（3）关联配置文件 : 是否关联 git 配置文件, 该配置文件主要显示文本编辑器的样式。</p>
+<p>（4）关联shell脚本文件 : 是否关联Bash命令行执行的脚本文件。</p>
+<p>（5）使用TrueType编码 : 在命令行中是否使用TruthType编码, 该编码是微软和苹果公司制定的通用编码。</p>
+<p>&nbsp;</p>
+<p>4.选择完之后，点击“Next”，显示截图如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20161113103949805.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="justify">开始菜单快捷方式目录：设置开始菜单中快捷方式的目录名称, 也可以选择不在开始菜单中创建快捷方式。</p>
+<p align="justify">&nbsp;</p>
+<p>5.点击“Next”，显示截图如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20161113104033433.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="justify">设置环境变量</p>
+<p align="justify">选择使用什么样的命令行工具，一般情况下我们默认使用Git Bash即可：</p>
+<p align="justify">（1）Git自带：使用Git自带的Git Bash命令行工具。</p>
+<p align="justify">（2）系统自带CMD：使用Windows系统的命令行工具。</p>
+<p align="justify">（3）二者都有：上面二者同时配置，但是注意，这样会将windows中的find.exe 和 sort.exe工具覆盖，如果不懂这些尽量不要选择。</p>
+<p align="justify">&nbsp;</p>
+<p>6.选择之后，继续点击“Next”，显示如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20161113104251935.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="justify">选择提交的时候换行格式</p>
+<p align="justify">（1）检查出windows格式转换为unix格式：将windows格式的换行转为unix格式的换行再进行提交。</p>
+<p align="justify">（2）检查出原来格式转为unix格式：不管什么格式的，一律转为unix格式的换行再进行提交。</p>
+<p align="justify">（3）不进行格式转换 : 不进行转换，检查出什么，就提交什么。</p>
+<p align="justify">&nbsp;</p>
+<p>7.选择之后，点击“Next”，显示截图如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20161113104411026.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>8.选择之后，点击“Next”，显示截图如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20161113104440266.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>9.选择之后，点击“Install”，开始安装，截图显示如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20161113104517095.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>10.安装完成之后，显示截图如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20161113104611722.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>这样，我们的Git客户端就下载并安装完成了。</p>
+<p>&nbsp;</p>
+<p>一：Git是什么？</p>
+<p>　　Git是目前世界上最先进的分布式版本控制系统。</p>
+<p>　　二：SVN与Git的最主要的区别？</p>
+<p>　　SVN是集中式版本控制系统，版本库是集中放在中央服务器的，而干活的时候，用的都是自己的电脑，所以首先要从中央服务器哪里得到最新的版本，
+然后干活，干完后，需要把自己做完的活推送到中央服务器。集中式版本控制系统是必须联网才能工作，如果在局域网还可以，带宽够大，速度够快，如果在互联网
+下，如果网速慢的话，就纳闷了。</p>
+<p>　　Git是分布式版本控制系统，那么它就没有中央服务器的，每个人的电脑就是一个完整的版本库，这样，工作的时候就不需要联网了，因为版本都是在
+自己的电脑上。既然每个人的电脑都有一个完整的版本库，那多个人如何协作呢？比如说自己在电脑上改了文件A，其他人也在电脑上改了文件A，这时，你们两之
+间只需把各自的修改推送给对方，就可以互相看到对方的修改了。</p>
+<p>　　三：在windows上如何安装Git？</p>
+<p>　　msysgit是 windows版的Git,如下：</p>
+<p>&nbsp; &nbsp; &nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323139942.JPG" alt=""></p>
+<p>　　需要从网上下载一个，然后进行默认安装即可。安装完成后，在开始菜单里面找到 "Git --&gt; Git Bash",如下：</p>
+<p>&nbsp;&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323492255.JPG" alt=""></p>
+<p>　　会弹出一个类似的命令窗口的东西，就说明Git安装成功。如下：</p>
+<p>&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323462017.JPG" alt=""></p>
+<p>　　安装完成后，还需要最后一步设置，在命令行输入如下：</p>
+<p>&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323641881.JPG" alt=""></p>
+<p>　　因为Git是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识。</p>
+<p>　　注意：git config&nbsp; --global 参数，有了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然你也可以对某个仓库指定的不同的用户名和邮箱。</p>
+<p>　　四：如何操作？</p>
+<p>　　一：创建版本库。</p>
+<p>　　什么是版本库？版本库又名仓库，英文名repository,你可以简单的理解一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改，删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻还可以将文件”还原”。</p>
+<p>　　所以创建一个版本库也非常简单，如下我是D盘 –&gt; www下 目录下新建一个testgit版本库。</p>
+<p>&nbsp; &nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323332305.PNG" alt=""></p>
+<p>　　pwd 命令是用于显示当前的目录。</p>
+<p>　　1. 通过命令 git init 把这个目录变成git可以管理的仓库，如下：</p>
+<p>&nbsp; &nbsp; &nbsp;&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323278648.PNG" alt=""></p>
+<p>　　这时候你当前testgit目录下会多了一个.git的目录，这个目录是Git来跟踪管理版本的，没事千万不要手动乱改这个目录里面的文件，否则，会把git仓库给破坏了。如下：</p>
+<p>&nbsp; &nbsp;&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323377996.PNG" alt=""></p>
+<p>　　2. 把文件添加到版本库中。</p>
+<p>　　首先要明确下，所有的版本控制系统，只能跟踪文本文件的改动，比如txt文件，网页，所有程序的代码等，Git也不列外，版本控制系统可以告诉
+你每次的改动，但是图片，视频这些二进制文件，虽能也能由版本控制系统管理，但没法跟踪文件的变化，只能把二进制文件每次改动串起来，也就是知道图片从
+1kb变成2kb，但是到底改了啥，版本控制也不知道。</p>
+<p>　　下面先看下demo如下演示：</p>
+<p>　　我在版本库testgit目录下新建一个记事本文件 readme.txt 内容如下：11111111</p>
+<p>　　第一步：使用命令 git add readme.txt添加到暂存区里面去。如下：</p>
+<p>&nbsp; &nbsp;&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323946973.PNG" alt=""></p>
+<p>　　如果和上面一样，没有任何提示，说明已经添加成功了。</p>
+<p>　　第二步：用命令 git commit告诉Git，把文件提交到仓库。</p>
+<p>&nbsp; &nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323329134.PNG" alt=""></p>
+<p>　　现在我们已经提交了一个readme.txt文件了，我们下面可以通过命令git status来查看是否还有文件未提交，如下：</p>
+<p>&nbsp;&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323814401.PNG" alt=""></p>
+<p>　　说明没有任何文件未提交，但是我现在继续来改下readme.txt内容，比如我在下面添加一行2222222222内容，继续使用git status来查看下结果，如下：</p>
+<p>&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323317401.PNG" alt=""></p>
+<p>　　上面的命令告诉我们 readme.txt文件已被修改，但是未被提交的修改。</p>
+<p>　　接下来我想看下readme.txt文件到底改了什么内容，如何查看呢？可以使用如下命令：</p>
+<p>　　git diff readme.txt 如下：</p>
+<p>&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323930242.PNG" alt=""></p>
+<p>　　如上可以看到，readme.txt文件内容从一行11111111改成 二行 添加了一行22222222内容。</p>
+<p>　　知道了对readme.txt文件做了什么修改后，我们可以放心的提交到仓库了，提交修改和提交文件是一样的2步(第一步是git add&nbsp; 第二步是：git commit)。</p>
+<p>　　如下：</p>
+<p>&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323697556.PNG" alt=""></p>
+<p>　　二：版本回退：</p>
+<p>　　如上，我们已经学会了修改文件，现在我继续对readme.txt文件进行修改，再增加一行</p>
+<p>　　内容为33333333333333.继续执行命令如下：</p>
+<p>&nbsp; &nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323548540.PNG" alt=""></p>
+<p>　　现在我已经对readme.txt文件做了三次修改了，那么我现在想查看下历史记录，如何查呢？我们现在可以使用命令 git log 演示如下所示：</p>
+<p>&nbsp;&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323081535.PNG" alt=""></p>
+<p>　　git 
+log命令显示从最近到最远的显示日志，我们可以看到最近三次提交，最近的一次是,增加内容为333333.上一次是添加内容222222，第一次默认是
+ 111111.如果嫌上面显示的信息太多的话，我们可以使用命令 git log –pretty=oneline 演示如下：</p>
+<p>&nbsp;&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323647109.PNG" alt=""></p>
+<p>　　现在我想使用版本回退操作，我想把当前的版本回退到上一个版本，要使用什么命令呢？可以使用如下2种命令，第一种是：git 
+reset&nbsp; --hard HEAD^ 那么如果要回退到上上个版本只需把HEAD^ 改成 HEAD^^ 
+以此类推。那如果要回退到前100个版本的话，使用上面的方法肯定不方便，我们可以使用下面的简便命令操作：git reset&nbsp; 
+--hard HEAD~100 即可。未回退之前的readme.txt内容如下：</p>
+<p>&nbsp;&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323246433.PNG" alt=""></p>
+<p>　　如果想回退到上一个版本的命令如下操作：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323782780.PNG" alt=""></p>
+<p>　　再来查看下 readme.txt内容如下：通过命令cat readme.txt查看</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323399310.PNG" alt=""></p>
+<p>　　可以看到，内容已经回退到上一个版本了。我们可以继续使用git log 来查看下历史记录信息，如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323256378.PNG" alt=""></p>
+<p>　　我们看到 增加333333 内容我们没有看到了，但是现在我想回退到最新的版本，如：有333333的内容要如何恢复呢？我们可以通过版本号回退，使用命令方法如下：</p>
+<p>　　git reset&nbsp; --hard 版本号 ，但是现在的问题假如我已经关掉过一次命令行或者333内容的版本号我并不知道呢？要如何知道增加3333内容的版本号呢？可以通过如下命令即可获取到版本号：git reflog&nbsp; 演示如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323025760.PNG" alt=""></p>
+<p>　　通过上面的显示我们可以知道，增加内容3333的版本号是 6fcfc89.我们现在可以命令</p>
+<p>　　git reset&nbsp; --hard 6fcfc89来恢复了。演示如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323488816.PNG" alt=""></p>
+<p>　　可以看到 目前已经是最新的版本了。&nbsp;</p>
+<p>　　三：理解工作区与暂存区的区别？</p>
+<p>　　工作区：就是你在电脑上看到的目录，比如目录下testgit里的文件(.git隐藏目录版本库除外)。或者以后需要再新建的目录文件等等都属于工作区范畴。</p>
+<p>　　版本库(Repository)：工作区有一个隐藏目录.git,这个不属于工作区，这是版本库。其中版本库里面存了很多东西，其中最重要的就是stage(暂存区)，还有Git为我们自动创建了第一个分支master,以及指向master的一个指针HEAD。</p>
+<p>　　我们前面说过使用Git提交文件到版本库有两步：</p>
+<p>　　第一步：是使用 git add 把文件添加进去，实际上就是把文件添加到暂存区。</p>
+<p>　　第二步：使用git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支上。</p>
+<p>　　我们继续使用demo来演示下：</p>
+<p>　　我们在readme.txt再添加一行内容为4444444，接着在目录下新建一个文件为test.txt 内容为test，我们先用命令 git status来查看下状态，如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323511132.PNG" alt=""></p>
+<p>　　现在我们先使用git add 命令把2个文件都添加到暂存区中，再使用git status来查看下状态，如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323068088.PNG" alt=""></p>
+<p>　　接着我们可以使用git commit一次性提交到分支上，如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323704968.PNG" alt=""></p>
+<p>&nbsp;</p>
+<p>　　四：Git撤销修改和删除文件操作。</p>
+<p>　　一：撤销修改：</p>
+<p>　　比如我现在在readme.txt文件里面增加一行 内容为555555555555，我们先通过命令查看如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323664546.PNG" alt=""></p>
+<p>　　在我未提交之前，我发现添加5555555555555内容有误，所以我得马上恢复以前的版本，现在我可以有如下几种方法可以做修改：</p>
+<p>　　第一：如果我知道要删掉那些内容的话，直接手动更改去掉那些需要的文件，然后add添加到暂存区，最后commit掉。</p>
+<p>　　第二：我可以按以前的方法直接恢复到上一个版本。使用 git reset&nbsp; --hard HEAD^</p>
+<p>　　但是现在我不想使用上面的2种方法，我想直接想使用撤销命令该如何操作呢？首先在做撤销之前，我们可以先用 git status 查看下当前的状态。如下所示：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323475439.PNG" alt=""></p>
+<p>　　可以发现，Git会告诉你，git checkout&nbsp; -- file 可以丢弃工作区的修改，如下命令：</p>
+<p>　　git checkout&nbsp; --&nbsp; readme.txt,如下所示：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323485203.PNG" alt=""></p>
+<p>　　命令 git checkout --readme.txt 意思就是，把readme.txt文件在工作区做的修改全部撤销，这里有2种情况，如下：</p>
+<ol>
+<li>readme.txt自动修改后，还没有放到暂存区，使用 撤销修改就回到和版本库一模一样的状态。</li>
+<li>另外一种是readme.txt已经放入暂存区了，接着又作了修改，撤销修改就回到添加暂存区后的状态。</li>
+</ol>
+<p>　　对于第二种情况，我想我们继续做demo来看下，假如现在我对readme.txt添加一行 内容为6666666666666，我git add 增加到暂存区后，接着添加内容7777777，我想通过撤销命令让其回到暂存区后的状态。如下所示：</p>
+<p>&nbsp;&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323300452.PNG" alt=""></p>
+<p>　　注意：命令git checkout -- readme.txt 中的 -- 很重要，如果没有 -- 的话，那么命令变成创建分支了。</p>
+<p>　　二：删除文件。</p>
+<p>　　假如我现在版本库testgit目录添加一个文件b.txt,然后提交。如下：</p>
+<p>&nbsp;&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323489420.PNG" alt=""></p>
+<p>　　如上：一般情况下，可以直接在文件目录中把文件删了，或者使用如上rm命令：rm b.txt ，如果我想彻底从版本库中删掉了此文件的话，可以再执行commit命令 提交掉，现在目录是这样的，</p>
+<p>&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323570490.PNG" alt=""></p>
+<p>　　只要没有commit之前，如果我想在版本库中恢复此文件如何操作呢？</p>
+<p>　　可以使用如下命令 git checkout&nbsp; -- b.txt，如下所示：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323219400.PNG" alt=""></p>
+<p>　　再来看看我们testgit目录，添加了3个文件了。如下所示：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323205602.PNG" alt=""></p>
+<p>&nbsp;</p>
+<p>　　五：远程仓库。</p>
+<p>　　在了解之前，先注册github账号，由于你的本地Git仓库和github仓库之间的传输是通过SSH加密的，所以需要一点设置：</p>
+<p>　　第一步：创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果有的话，直接跳过此如下命令，如果没有的话，打开命令行，输入如下命令：</p>
+<p>　　ssh-keygen&nbsp; -t rsa –C “youremail@example.com”, 由于我本地此前运行过一次，所以本地有，如下所示：</p>
+<p>&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323753352.PNG" alt=""></p>
+<p>　　id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。</p>
+<p>　　第二步：登录github,打开” settings”中的SSH Keys页面，然后点击“Add SSH Key”,填上任意title，在Key文本框里黏贴id_rsa.pub文件的内容。</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323355322.PNG" alt=""></p>
+<p>　　点击 Add Key，你就应该可以看到已经添加的key。</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323592489.PNG" alt=""></p>
+<ol>
+<li>如何添加远程库？</li>
+</ol>
+<p>　　现在的情景是：我们已经在本地创建了一个Git仓库后，又想在github创建一个Git仓库，并且希望这两个仓库进行远程同步，这样github的仓库可以作为备份，又可以其他人通过该仓库来协作。</p>
+<p>　　首先，登录github上，然后在右上角找到“create a new repo”创建一个新的仓库。如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323213968.PNG" alt=""></p>
+<p>　　在Repository name填入testgit，其他保持默认设置，点击“Create repository”按钮，就成功地创建了一个新的Git仓库：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323934746.PNG" alt=""></p>
+<p>　　目前，在GitHub上的这个testgit仓库还是空的，GitHub告诉我们，可以从这个仓库克隆出新的仓库，也可以把一个已有的本地仓库与之关联，然后，把本地仓库的内容推送到GitHub仓库。</p>
+<p>　　现在，我们根据GitHub的提示，在本地的testgit仓库下运行命令：</p>
+<p>　　git remote add origin https://github.com/tugenhua0707/testgit.git</p>
+<p>　　所有的如下：</p>
+<p>&nbsp;&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323816495.PNG" alt=""></p>
+<p>　　把本地库的内容推送到远程，使用 git push命令，实际上是把当前分支master推送到远程。</p>
+<p>　　由于远程库是空的，我们第一次推送master分支时，加上了 
+–u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，
+在以后的推送或者拉取时就可以简化命令。推送成功后，可以立刻在github页面中看到远程库的内容已经和本地一模一样了，上面的要输入github的用
+户名和密码如下所示：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323652630.PNG" alt=""></p>
+<p>　　从现在起，只要本地作了提交，就可以通过如下命令：</p>
+<p>　　git push origin master</p>
+<p>　　把本地master分支的最新修改推送到github上了，现在你就拥有了真正的分布式版本库了。</p>
+<p>　　2. 如何从远程库克隆？</p>
+<p>　　上面我们了解了先有本地库，后有远程库时候，如何关联远程库。</p>
+<p>　　现在我们想，假如远程库有新的内容了，我想克隆到本地来 如何克隆呢？</p>
+<p>　　首先，登录github，创建一个新的仓库，名字叫testgit2.如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323066741.PNG" alt=""></p>
+<p>　　如下，我们看到：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323087143.PNG" alt=""></p>
+<p>　　现在，远程库已经准备好了，下一步是使用命令git clone克隆一个本地库了。如下所示：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323653601.PNG" alt=""></p>
+<p>　　接着在我本地目录下 生成testgit2目录了，如下所示：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323810970.PNG" alt=""></p>
+<p>　　六：创建与合并分支。</p>
+<p>　　在版本回填退里，你已经知道，每次提交，Git都把它们串成一条时间线，这条时间线就是一个分支。截止到目前，只有一条时间线，在Git里，这
+个分支叫主分支，即master分支。HEAD严格来说不是指向提交，而是指向master，master才是指向提交的，所以，HEAD指向的就是当前
+分支。</p>
+<p>　　首先，我们来创建dev分支，然后切换到dev分支上。如下操作：</p>
+<p>&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323880647.PNG" alt=""></p>
+<p>　　git checkout 命令加上 –b参数表示创建并切换，相当于如下2条命令</p>
+<p>　　git branch dev</p>
+<p>　　git checkout dev</p>
+<p>　　git branch查看分支，会列出所有的分支，当前分支前面会添加一个星号。然后我们在dev分支上继续做demo，比如我们现在在readme.txt再增加一行 7777777777777</p>
+<p>　　首先我们先来查看下readme.txt内容，接着添加内容77777777，如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323081351.PNG" alt=""></p>
+<p>　　现在dev分支工作已完成，现在我们切换到主分支master上，继续查看readme.txt内容如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323800057.PNG" alt=""></p>
+<p>　　现在我们可以把dev分支上的内容合并到分支master上了，可以在master分支上，使用如下命令 git merge dev 如下所示：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323221531.PNG" alt=""></p>
+<p>　　git merge命令用于合并指定分支到当前分支上，合并后，再查看readme.txt内容，可以看到，和dev分支最新提交的是完全一样的。</p>
+<p>　　注意到上面的Fast-forward信息，Git告诉我们，这次合并是“快进模式”，也就是直接把master指向dev的当前提交，所以合并速度非常快。</p>
+<p>　　合并完成后，我们可以接着删除dev分支了，操作如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323504876.PNG" alt=""></p>
+<p>　　总结创建与合并分支命令如下：</p>
+<p>　　查看分支：git branch</p>
+<p>　　创建分支：git branch name</p>
+<p>　　切换分支：git checkout name</p>
+<p>　　创建+切换分支：git checkout –b name</p>
+<p>　　合并某分支到当前分支：git merge name</p>
+<p>　　删除分支：git branch –d name</p>
+<ol>
+<li>如何解决冲突？</li>
+</ol>
+<p>　　下面我们还是一步一步来，先新建一个新分支，比如名字叫fenzhi1，在readme.txt添加一行内容8888888，然后提交，如下所示：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323339686.PNG" alt=""></p>
+<p>　　同样，我们现在切换到master分支上来，也在最后一行添加内容，内容为99999999，如下所示：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323193463.PNG" alt=""></p>
+<p>　　现在我们需要在master分支上来合并fenzhi1，如下操作：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323924953.PNG" alt=""></p>
+<p>　　Git用&lt;&lt;&lt;&lt;&lt;&lt;&lt;，=======，&gt;&gt;&gt;&gt;&gt;&gt;&
+gt;标记出不同分支的内容，其中&lt;&lt;&lt;HEAD是指主分支修改的内容，&gt;&gt;&gt;&gt;&gt;fenzhi1 
+是指fenzhi1上修改的内容，我们可以修改下如下后保存：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323509835.PNG" alt=""></p>
+<p>　　如果我想查看分支合并的情况的话，需要使用命令 git log.命令行演示如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323362652.PNG" alt=""></p>
+<p>　　3.分支管理策略。</p>
+<p>　　通常合并分支时，git一般使用”Fast forward”模式，在这种模式下，删除分支后，会丢掉分支信息，现在我们来使用带参数 –no-ff来禁用”Fast forward”模式。首先我们来做demo演示下：</p>
+<ol>
+<li>创建一个dev分支。</li>
+<li>修改readme.txt内容。</li>
+<li>添加到暂存区。</li>
+<li>切换回主分支(master)。</li>
+<li>合并dev分支，使用命令 git merge –no-ff&nbsp; -m “注释” dev</li>
+<li>查看历史记录</li>
+</ol>
+<p>　　截图如下：</p>
+<p>&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323716364.PNG" alt=""></p>
+<p>　　分支策略：首先master主分支应该是非常稳定的，也就是用来发布新版本，一般情况下不允许在上面干活，干活一般情况下在新建的dev分支上干活，干完后，比如上要发布，或者说dev分支代码稳定后可以合并到主分支master上来。</p>
+<p>　　七：bug分支：</p>
+<p>　　在开发中，会经常碰到bug问题，那么有了bug就需要修复，在Git中，分支是很强大的，每个bug都可以通过一个临时分支来修复，修复完成后，合并分支，然后将临时的分支删除掉。</p>
+<p>　　比如我在开发中接到一个404 bug时候，我们可以创建一个404分支来修复它，但是，当前的dev分支上的工作还没有提交。比如如下：</p>
+<p>&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323590467.PNG" alt=""></p>
+<p>　　并不是我不想提交，而是工作进行到一半时候，我们还无法提交，比如我这个分支bug要2天完成，但是我issue-404 
+bug需要5个小时内完成。怎么办呢？还好，Git还提供了一个stash功能，可以把当前工作现场 ”隐藏起来”，等以后恢复现场后继续工作。如下：</p>
+<p>&nbsp;&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323904976.PNG" alt=""></p>
+<p>　　所以现在我可以通过创建issue-404分支来修复bug了。</p>
+<p>　　首先我们要确定在那个分支上修复bug，比如我现在是在主分支master上来修复的，现在我要在master分支上创建一个临时分支，演示如下：</p>
+<p>&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323971499.PNG" alt=""></p>
+<p>　　修复完成后，切换到master分支上，并完成合并，最后删除issue-404分支。演示如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323033671.PNG" alt=""></p>
+<p>　　现在，我们回到dev分支上干活了。</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323521479.PNG" alt=""></p>
+<p>　　工作区是干净的，那么我们工作现场去哪里呢？我们可以使用命令 git stash list来查看下。如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323640091.PNG" alt=""></p>
+<p>　　工作现场还在，Git把stash内容存在某个地方了，但是需要恢复一下，可以使用如下2个方法：</p>
+<ol>
+<li>git stash apply恢复，恢复后，stash内容并不删除，你需要使用命令git stash drop来删除。</li>
+<li>另一种方式是使用git stash pop,恢复的同时把stash内容也删除了。</li>
+</ol>
+<p>　　演示如下</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323277927.PNG" alt=""></p>
+<p>　　八：多人协作。</p>
+<p>　　当你从远程库克隆时候，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且远程库的默认名称是origin。</p>
+<ol>
+<li>要查看远程库的信息 使用 git remote</li>
+<li>要查看远程库的详细信息 使用 git remote –v</li>
+</ol>
+<p>　　如下演示：</p>
+<p>&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323746117.PNG" alt=""></p>
+<p>　　一：推送分支：</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 推送分支就是把该分支上所有本地提交到远程库中，推送时，要指定本地分支，这样，Git就会把该分支推送到远程库对应的远程分支上：</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 使用命令 git push origin master</p>
+<p>　　比如我现在的github上的readme.txt代码如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323207093.PNG" alt=""></p>
+<p>　　本地的readme.txt代码如下：</p>
+<p>&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323265347.PNG" alt=""></p>
+<p>　　现在我想把本地更新的readme.txt代码推送到远程库中，使用命令如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323614285.PNG" alt=""></p>
+<p>　　我们可以看到如上，推送成功，我们可以继续来截图github上的readme.txt内容 如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323666589.PNG" alt=""></p>
+<p>　　可以看到 推送成功了，如果我们现在要推送到其他分支，比如dev分支上，我们还是那个命令 git push origin dev</p>
+<p>　　那么一般情况下，那些分支要推送呢？</p>
+<ol>
+<li>master分支是主分支，因此要时刻与远程同步。</li>
+<li>一些修复bug分支不需要推送到远程去，可以先合并到主分支上，然后把主分支master推送到远程去。</li>
+</ol>
+<p>　　二：抓取分支：</p>
+<p>　　多人协作时，大家都会往master分支上推送各自的修改。现在我们可以模拟另外一个同事，可以在另一台电脑上（注意要把SSH key添加到github上）或者同一台电脑上另外一个目录克隆，新建一个目录名字叫testgit2</p>
+<p>　　但是我首先要把dev分支也要推送到远程去，如下</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323412975.JPG" alt=""></p>
+<p>　　接着进入testgit2目录，进行克隆远程的库到本地来，如下：</p>
+<p>&nbsp;<img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323440615.PNG" alt=""></p>
+<p>　　现在目录下生成有如下所示：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323778305.PNG" alt=""></p>
+<p>　　现在我们的小伙伴要在dev分支上做开发，就必须把远程的origin的dev分支到本地来，于是可以使用命令创建本地dev分支：git checkout&nbsp; –b dev origin/dev</p>
+<p>　　现在小伙伴们就可以在dev分支上做开发了，开发完成后把dev分支推送到远程库时。</p>
+<p>　　如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323562998.PNG" alt=""></p>
+<p>　　小伙伴们已经向origin/dev分支上推送了提交，而我在我的目录文件下也对同样的文件同个地方作了修改，也试图推送到远程库时，如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323412534.PNG" alt=""></p>
+<p>　　由上面可知：推送失败，因为我的小伙伴最新提交的和我试图推送的有冲突，解决的办法也很简单，上面已经提示我们，先用git pull把最新的提交从origin/dev抓下来，然后在本地合并，解决冲突，再推送。</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323331398.PNG" alt=""></p>
+<p>　　git pull也失败了，原因是没有指定本地dev分支与远程origin/dev分支的链接，根据提示，设置dev和origin/dev的链接：如下：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323834950.PNG" alt=""></p>
+<p>　　这回git pull成功，但是合并有冲突，需要手动解决，解决的方法和分支管理中的 解决冲突完全一样。解决后，提交，再push：</p>
+<p>　　我们可以先来看看readme.txt内容了。</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323537944.PNG" alt=""></p>
+<p>　　现在手动已经解决完了，我接在需要再提交，再push到远程库里面去。如下所示：</p>
+<p><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141027155323136569.PNG" alt=""></p>
+<p>　　因此：多人协作工作模式一般是这样的：</p>
+<ol>
+<li>首先，可以试图用git push origin branch-name推送自己的修改.</li>
+<li>如果推送失败，则因为远程分支比你的本地更新早，需要先用git pull试图合并。</li>
+<li>如果合并有冲突，则需要解决冲突，并在本地提交。再用git push origin branch-name推送。</li>
+</ol>
+<p>　　Git基本常用命令如下：</p>
+<p>　　mkdir：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XX (创建一个空目录 XX指目录名)</p>
+<p>　　pwd：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 显示当前目录的路径。</p>
+<p>　　git init&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 把当前的目录变成可以管理的git仓库，生成隐藏.git文件。</p>
+<p>　　git add XX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 把xx文件添加到暂存区去。</p>
+<p>　　git commit –m “XX”&nbsp; 提交文件 –m 后面的是注释。</p>
+<p>　　git status&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 查看仓库状态</p>
+<p>　　git diff&nbsp; XX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 查看XX文件修改了那些内容</p>
+<p>　　git log&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 查看历史记录</p>
+<p>　　git reset&nbsp; --hard HEAD^ 或者 git reset&nbsp; --hard HEAD~ 回退到上一个版本</p>
+<p>　　(如果想回退到100个版本，使用git reset –hard HEAD~100 )</p>
+<p>　　cat XX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 查看XX文件内容</p>
+<p>　　git reflog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 查看历史记录的版本号id</p>
+<p>　　git checkout -- XX&nbsp; 把XX文件在工作区的修改全部撤销。</p>
+<p>　　git rm XX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 删除XX文件</p>
+<p>　　git remote add origin&nbsp;<a href="https://github.com/tugenhua0707/testgit" target="_blank">https://github.com/tugenhua0707/testgit</a>&nbsp;关联一个远程库</p>
+<p>　　git push –u(第一次要用-u 以后不需要) origin master 把当前master分支推送到远程库</p>
+<p>　　git clone&nbsp;<a href="https://github.com/tugenhua0707/testgit" target="_blank">https://github.com/tugenhua0707/testgit</a>&nbsp; 从远程库中克隆</p>
+<p>　　git checkout –b dev&nbsp; 创建dev分支 并切换到dev分支上</p>
+<p>　　git branch&nbsp; 查看当前所有的分支</p>
+<p>　　git checkout master 切换回master分支</p>
+<p>　　git merge dev&nbsp; &nbsp;&nbsp;在当前的分支上合并dev分支</p>
+<p>　　git branch –d dev 删除dev分支</p>
+<p>　　git branch name&nbsp; 创建分支</p>
+<p>　　git stash 把当前的工作隐藏起来 等以后恢复现场后继续工作</p>
+<p>　　git stash list 查看所有被隐藏的文件列表</p>
+<p>　　git stash apply 恢复被隐藏的文件，但是内容不删除</p>
+<p>　　git stash drop 删除文件</p>
+<p>　　git stash pop 恢复文件的同时 也删除文件</p>
+<p>　　git remote 查看远程库的信息</p>
+<p>　　git remote –v 查看远程库的详细信息</p>
+<p>　　git push origin master&nbsp; Git会把master分支推送到远程库对应的远程分支上</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/smuxiaolei/category/1077248.html" target="_blank">Git</a></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(7484678,cb_blogId,1);green_channel_success(this,'谢谢推荐！');">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow('d07370dd-0251-4f47-777c-08d49c352df3');" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/smuxiaolei/" target="_blank"><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20170910235801.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/smuxiaolei/">懵懂的菜鸟</a><br>
+            <a href="http://home.cnblogs.com/u/smuxiaolei/followees">关注 - 8</a><br>
+            <a href="http://home.cnblogs.com/u/smuxiaolei/followers">粉丝 - 3</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow('d07370dd-0251-4f47-777c-08d49c352df3');return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(7484678,'Digg')">
+        <span class="diggnum" id="digg_count">1</span>
+    </div>
+    <div class="buryit" onclick="votePost(7484678,'Bury')">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/smuxiaolei/p/7483014.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/smuxiaolei/p/7483014.html" title="发布于2017-09-06 09:39">Windows sql语句正则匹配导出数据到本地 The MySQL server is running with the --secure-file-priv option so it cannot execute this statement</a><br><a href="http://www.cnblogs.com/smuxiaolei/p/7485180.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/smuxiaolei/p/7485180.html" title="发布于2017-09-06 15:50">git ssh创建秘钥</a><br></div>
+</div>
+
+
+		<p class="postfoot">
+			posted on <span id="post-date">2017-09-06 14:36</span> <a href="http://www.cnblogs.com/smuxiaolei/">懵懂的菜鸟</a> 阅读(<span id="post_view_count">2422</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=7484678" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(7484678);return false;">收藏</a>
+		</p>
+	</div>
+	<script type="text/javascript">var 
+allowComments=true,cb_blogId=374018,cb_entryId=7484678,cb_blogApp=currentBlogApp,cb_blogUserGuid='d07370dd-0251-4f47-777c-08d49c352df3',cb_entryCreatedDate='2017/9/6
+ 14:36:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+	
+	</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login('commentform');">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】超50万VC++源码: 大型工控、组态\仿真、建模CAD源码2018！</a><br><a href="https://cloud.tencent.com/act/first_purchase?fromSource=gwzcw.763755.763755.763755" target="_blank">【推荐】怎样购买腾讯云服务器更划算？</a><br></div>
+<div id="opt_under_post"></div>
+<div id="cnblogs_c1" class="c_ad_block"><a href="http://www.h3bpm.net/" target="_blank"><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/24442-20180126164912131-1246397933.jpg" alt="h3bpm0126" width="300" height="250"></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="https://news.cnblogs.com/n/588589/" target="_blank">2月1日生效！微博微卡升级：新增百度系App免流</a><br> ·  <a href="https://news.cnblogs.com/n/588588/" target="_blank">Microsoft Teams上线来最大更新：新增命令框功能</a><br> ·  <a href="https://news.cnblogs.com/n/588587/" target="_blank">腾讯率苏宁京东勤王，王健林能否否极泰来</a><br> ·  <a href="https://news.cnblogs.com/n/588586/" target="_blank">万达回应四巨头入股：不会选边站队，不会退出房地产</a><br> ·  <a href="https://news.cnblogs.com/n/588585/" target="_blank">建设Windows 10 on ARM生态：微软鼓励开发者提交UWP应用</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="cnblogs_c2" class="c_ad_block"><a href="http://click.aliyun.com/m/34770/" target="_blank"><img src="Git%20%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%20-%20%E6%87%B5%E6%87%82%E7%9A%84%E8%8F%9C%E9%B8%9F%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/24442-20171208101900738-116140477.jpg" alt="阿里云C2-1208" width="468" height="60"></a></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/586236/" target="_blank">领域驱动设计在互联网业务开发中的实践</a><br> ·  <a href="http://kb.cnblogs.com/page/585502/" target="_blank">步入云计算</a><br> ·  <a href="http://kb.cnblogs.com/page/531409/" target="_blank">以操作系统的角度述说线程与进程</a><br> ·  <a href="http://kb.cnblogs.com/page/141729/" target="_blank">软件测试转型之路</a><br> ·  <a href="http://kb.cnblogs.com/page/177402/" target="_blank">门内门外看招聘</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+</div>
+
+<p id="footer">
+	Powered by: 
+	<br>
+	
+	<a id="Footer1_Hyperlink3" name="Hyperlink1" href="http://www.cnblogs.com/" style="font-family:Verdana;font-size:12px;">博客园</a>
+	<br>
+	Copyright © 懵懂的菜鸟
+</p>
+
+
+
+</body></html>
