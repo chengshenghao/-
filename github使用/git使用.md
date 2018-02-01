@@ -1,4 +1,4 @@
-# 创建数据库
+## 本地仓库
 ### 1.创建文件夹
 	cd D:(进入d盘)
 	cd mkdir testgit（创建文件夹）
@@ -37,7 +37,37 @@
       ②另外一种是readme.txt已经放入暂存区了，接着又作了修改，撤销修改就回到添加暂存区后的状态。
 
 
-	
+## 远程仓库
+
+先注册github账号，由于你的本地Git仓库和github仓库之间的传输是通过SSH加密的，所以需要一点设置：
+### 1. SSH Key设置
+	1. 打开 Git Bash窗口工具 
 
 
-	
+
+## git在Androidstudio中的使用
+	1. 下载安装git客户端
+	2. 将git客户端关联到android studio
+![](https://i.imgur.com/JKlCX24.png)
+
+    3. 创建本地仓库（一定要选择项目根目录，创建成功之后底部会出现Version Control）
+
+![](https://i.imgur.com/rP7UuTK.png)
+
+	4. 然后将文件添加到版本控制中去，commit提交修改
+
+![](https://i.imgur.com/siuUnBf.png)
+
+	5. 下面就要push到远程仓库了，要注意的是有时候第push会失败，需要pull一下一成push成功
+
+![](https://i.imgur.com/qQAefVU.png)
+
+	6.添加远程仓库地址等同于命令（git remote add origin [远程仓库地址]）
+
+![](https://i.imgur.com/q7DZTIF.png)
+
+
+![](https://i.imgur.com/p1zSsiD.png)	
+
+	7.查看远程仓库
+![](https://i.imgur.com/9CkLQnH.png)
