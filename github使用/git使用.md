@@ -41,9 +41,30 @@
 
 先注册github账号，由于你的本地Git仓库和github仓库之间的传输是通过SSH加密的，所以需要一点设置：
 ### 1. SSH Key设置
-	1. 打开 Git Bash窗口工具 
-
-
+	1. 打开 Git Bash窗口工具
+	2. 输入命令进入SSH文件夹（cd ~/.ssh/）,如果提示 “ No such file or directory”，你可以手动的创建一个 .ssh文件夹即可(mkdir ~/.ssh)
+	3. 配置全局的name和email，这里是的你github或者bitbucket的name和email
+	git config --global user.name "xkwg"  
+    git config --global user.email "xkwg@163.com"
+	4. 生成key， 连续按三次回车，这里设置的密码就为空了，并且创建了key，最后得到了两个文件：id_rsa和id_rsa.pub 
+	ssh-keygen -t rsa -C "xkwg@163.com"
+    5. 打开Admin目录进入.ssh文件夹，用记事本打开id_rsa.pub，复制里面的内容添加到你github或者bitbucket ssh设置里即可
+    6. 测试是否成功（未进行实际测试）
+    bitbucket输入命令：ssh -T git@bitbucket.org 
+    提示：“You can use git or hg to connect to Bitbucket. Shell access is disabled.” 说明添加成功了
+	github输入命令：ssh git@github.com  
+  	提示：“Hi lsyz0021! You've successfully authenticated, but GitHub does not provide shel l access.”说明添加成功。
+	7. 登录github,打开” settings”中的SSH Keys页面，然后点击“Add SSH Key”,填上任意title，在Key文本框里黏贴id_rsa.pub文件的内容。
+![](https://i.imgur.com/H3KvRhZ.png)
+	
+### 2. 添加远程仓库
+	1. 登录github上，然后在右上角找到“create a new repo”创建一个新的仓库。如下
+![](https://i.imgur.com/giwDXM5.png)
+	2. 成功地创建了后的Git仓库：
+![](https://i.imgur.com/wZiJm01.png)
+    3. 关联本地仓库，把本地库的内容推送到远程，使用 git push命令，实际上是把当前分支master推送到远程。
+![](https://i.imgur.com/fMkoXm1.png)
+	
 
 ## git在Androidstudio中的使用
 	1. 下载安装git客户端
